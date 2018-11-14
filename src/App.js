@@ -1,20 +1,23 @@
 import React, { Component, Fragment } from 'react';
+
 import './App.css';
+
 import Toggle from './ToggleRPC';
 import Portal from './Portal';
+import Modal from './Modal';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+
       <Toggle>
         {({ on, toggle }) => (
           <Fragment>
-            {on && (<h1>Hello</h1>)}
-            <button onClick={toggle}>Show / Hide</button>
-            <Portal>
-              { on && (<h1>Hi I am a Portal!</h1>)}
-            </Portal>
+            <button onClick={toggle}>Login</button>
+            <Modal on={on} toggle={toggle}>
+              <h1>Hi!</h1>
+            </Modal>
           </Fragment>
         )}
       </Toggle>
