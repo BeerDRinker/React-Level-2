@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import Portal from './Portal'
+import Icon from './Utilities/Icon'
 
 
 export default class Modal extends Component {
@@ -13,7 +14,9 @@ export default class Modal extends Component {
 				{on && 
 					<ModalWrapper>
 							<ModalCard>
-								<CloseButton onClick={toggle}>Close</CloseButton>
+								<CloseButton onClick={toggle}>
+                  <Icon name="close" />
+                </CloseButton>
 								<div>{children}</div>
 							</ModalCard>
 						<Background onClick={toggle} />
