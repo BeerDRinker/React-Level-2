@@ -15,11 +15,20 @@ class UserProvider extends Component {
     email: 'scott@mail.com'
   }
 
+  logout = () => {
+    this.setState({
+      id: null,
+      name: '',
+      email: ''
+    })
+  }
+
   render() {
     return (
       <UserContext.Provider
         value = {{
-          user: this.state
+          user: this.state,
+          logout: this.logout
         }}
       >
         {this.props.children}
@@ -27,7 +36,6 @@ class UserProvider extends Component {
     )
   }
 }
-
 
 class App extends Component {
   render() {
